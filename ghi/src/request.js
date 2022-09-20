@@ -20,7 +20,7 @@ function Request() {
   const submitHandler = (e) => {
     e.preventDefault();
     request(data.name[0], data.phone[0], data.email[0], id);
-    navigate(`/`);
+    navigate("/");
   };
   return (
     <div className="wrapper fadeInDown">

@@ -9,8 +9,8 @@ function Winery() {
   const { token } = useAuthContext();
 
   async function fetchWinery() {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/wineries/${id}/`;
     const response = await fetch(url);
 
@@ -22,8 +22,8 @@ function Winery() {
   }
 
   async function getCurrentUser() {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/accounts/user/`;
     const response = await fetch(url, {
       credentials: 'include',

@@ -7,8 +7,8 @@ export function getToken() {
 }
 
 export async function getTokenInternal() {
-  const host = `${process.env.REACT_APP_WINERY_API}`;
-  // const host = "http://localhost:8000"
+  // const host = `${process.env.REACT_APP_WINERY_API}`;
+  const host = "http://localhost:8000"
   const url = host + `/api/accounts/me/token/`;
 
   try {
@@ -78,8 +78,8 @@ export function useToken() {
 
   async function logout(id) {
     if (token) {
-      const host = `${process.env.REACT_APP_WINERY_API}`;
-      // const host = "http://localhost:8000"
+      // const host = `${process.env.REACT_APP_WINERY_API}`;
+      const host = "http://localhost:8000"
       const url = host + `/api/token/refresh/logout/`;
       await fetch(url, { method: 'delete', credentials: 'include' });
       internalToken = null;
@@ -89,8 +89,8 @@ export function useToken() {
   }
 
   async function login(username, password, id) {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/login/`;
 
     const form = new FormData();
@@ -121,8 +121,8 @@ export function useToken() {
     employee,
     winery
   ) {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/accounts/users/`;
     const response = await fetch(url, {
       method: 'post',
@@ -147,8 +147,8 @@ export function useToken() {
   }
 
   async function update(username, password, email, firstName, lastName) {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/accounts/`;
     const response = await fetch(url, {
       method: 'post',

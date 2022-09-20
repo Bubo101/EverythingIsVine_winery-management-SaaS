@@ -47,8 +47,8 @@ const Contact = () => {
   const { token } = useAuthContext();
 
   async function fetchWinery() {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/wineries/${id}/`;
 
     const response = await fetch(url);

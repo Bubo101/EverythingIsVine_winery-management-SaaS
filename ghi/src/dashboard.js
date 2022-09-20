@@ -42,8 +42,8 @@ class WineryList extends React.Component {
   }
 
   async componentDidMount() {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/wineries/`;
 
     try {

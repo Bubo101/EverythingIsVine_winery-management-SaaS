@@ -27,7 +27,7 @@ function Copyright() {
       {'Copyright © '}
       <Link
         color="inherit"
-        href="https://beach-bums.gitlab.io/everything-is-vine/"
+        href="/"
       >
         Everything is Vine
       </Link>{' '}
@@ -116,8 +116,8 @@ export default function Checkout() {
     if (userEmail !== '') {
       orderData['account_email'] = userEmail;
     }
-    const host = `${process.env.REACT_APP_SALES_API}`;
-    // const host = "http://localhost:8010"
+    // const host = `${process.env.REACT_APP_SALES_API}`;
+    const host = "http://localhost:8010"
     const orderUrl = host + `/api/orders/`;
     let fetchConfig = {
       method: 'post',
@@ -182,8 +182,8 @@ export default function Checkout() {
       shopping_items: shopping_items,
     };
 
-    const host = `${process.env.REACT_APP_SALES_API}`;
-    // const host = "http://localhost:8010"
+    // const host = `${process.env.REACT_APP_SALES_API}`;
+    const host = "http://localhost:8010"
     const shoppingItemsUrl = host + `/api/wineries/${winery_id}/shoppingitems/`;
     let fetchConfig = {
       method: 'post',
@@ -201,8 +201,8 @@ export default function Checkout() {
   }
   async function updateStock(qToSubtract) {
     for (let i = 0; i < qToSubtract.length; i++) {
-      const host = `${process.env.REACT_APP_WINERY_API}`;
-      // const host = "http://localhost:8000"
+      // const host = `${process.env.REACT_APP_WINERY_API}`;
+      const host = "http://localhost:8000"
       const url = host + `/api/wines/update/${qToSubtract[i].wine_id}/`;
 
       let wine_id = qToSubtract[i].wine_id;
@@ -266,8 +266,8 @@ export default function Checkout() {
   };
 
   async function getCurrentUser() {
-    const host = `${process.env.REACT_APP_SALES_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_SALES_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/accounts/user/`;
 
     const response = await fetch(url, {

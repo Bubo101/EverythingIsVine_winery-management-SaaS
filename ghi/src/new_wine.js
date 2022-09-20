@@ -38,8 +38,8 @@ function NewWine() {
   const navigate = useNavigate();
 
   async function getCurrentUser() {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/accounts/user/`;
     const response = await fetch(url, {
       credentials: 'include',
@@ -63,8 +63,8 @@ function NewWine() {
   async function newWine(event) {
     event.preventDefault();
     const newForm = { ...data };
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const locationUrl = host + `/api/wines/new/`;
 
     const fetchConfig = {

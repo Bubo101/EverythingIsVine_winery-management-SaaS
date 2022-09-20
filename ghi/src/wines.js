@@ -6,8 +6,8 @@ function WineColumn(props) {
   const { id } = useParams();
 
   async function delete_wine(wine_id) {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/wines/${wine_id}/delete/`;
     const response = await fetch(url, { method: 'DELETE' });
 
@@ -83,8 +83,8 @@ function WineList() {
   const { token } = useAuthContext();
 
   async function fetchWines() {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/wineries/${id}/wines/`;
 
     try {
@@ -121,8 +121,8 @@ function WineList() {
     }
   }
   async function getCurrentUser() {
-    const host = `${process.env.REACT_APP_WINERY_API}`;
-    // const host = "http://localhost:8000"
+    // const host = `${process.env.REACT_APP_WINERY_API}`;
+    const host = "http://localhost:8000"
     const url = host + `/api/accounts/user/`;
     const response = await fetch(url, {
       credentials: 'include',

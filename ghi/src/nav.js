@@ -42,7 +42,7 @@ function Navigation() {
     >
       <Container fluid>
         {/* <Navbar.Brand href="/"> */}
-        <Navbar.Brand href={`${process.env.REACT_APP_WINERY_API}`}>
+        <Navbar.Brand href={`/`}>
           <img
             src={`${process.env.PUBLIC_URL}/Navlogo.png`}
             alt=""

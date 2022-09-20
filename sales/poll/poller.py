@@ -13,9 +13,9 @@ from sales_rest.models import WineVO
 
 
 def get_wines():
-    url = host + "/api/wines/"
-    response = requests.get(url)
-    # response = requests.get("http://winery:8000/api/wines/")
+    # url = host + "/api/wines/"
+    # response = requests.get(url)
+    response = requests.get("http://winery:8000/api/wines/")
     content = json.loads(response.content)
     for wine in content["wines"]["query"]:
         WineVO.objects.update_or_create(
