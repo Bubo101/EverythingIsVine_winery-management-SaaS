@@ -85,7 +85,7 @@ class WineryList extends React.Component {
           style={{ backgroundColor: 'darkorchid' }}
         >
           <h1 className="display-5 fw-bold text-white mt-5">
-            Everything Is Vine
+            Everything Is Vine, a Boden Bradley Application
           </h1>
           <div className="col-lg-6 mx-auto">
             <p className="lead mb-5 text-light font-italic">

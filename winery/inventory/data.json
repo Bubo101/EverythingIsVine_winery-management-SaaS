@@ -1,10 +1,21 @@
 [
     {
         "model": "inventory.winery",
+        "pk": 1,
+        "fields": {
+            "name": "Scott Family Vineyards",
+            "url": "https://images.unsplash.com/photo-1596142332133-327e2a0ff006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+            "address": "500 Victory Way Los Angeles, CA 90000",
+            "description": "Rich 'Money' Scott took over in the 1970s and his passion for wine has led him to expand his holdings to own six properties throughout the region, producing over 3,000,000 bottles of quality wines each year.  The wines crafted by the Scott estates range from highly approachable, unpretentious wines all the way to elegant garage wines, all with a focus on value and delivering high quality to the consumer.",
+            "owner": "Rich M. Scott"
+        }
+    },
+    {
+        "model": "inventory.winery",
         "pk": 2,
         "fields": {
             "name": "Ryan Family Vineyard",
-            "url": "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_640,q_60,w_1024/v1/clients/sonomavalley/Buena_Vista_Winery_76722f70-afe6-440f-a8e0-37f994268834.jpg",
+            "url": "https://cwa-dp5yl5b.netdna-ssl.com/wp-content/uploads/2017/06/buehler-cellars-winery-vineyard-1000x666.webp",
             "address": "1000 South Street Los Angeles, CA 90000",
             "description": "Kayli developed a passion for wine while watching the movie Sideways after which she left her job as a stock broker and bought a vineyard.  She deeply respects the customs and traditions of the previous owner of his vines, and tries to use new techniques and a cutting edge winery to make the most authentic wines possible. She is quoted in saying: There is no reason we cannot make great wine on this old and proven terroir.",
             "owner": "Kayli Ryan"
@@ -52,6 +63,22 @@
             "address": "3104 Redwood Rd, Napa, CA 94558",
             "description": "From the beginning, all of our actions in the vineyard have been purposeful.  To us, it is a testament to our patience, time and commitment, striving for excellence is a never-ending goal. Today, our passion for producing wines that are enjoyable, memorable and approachable, and is what we have become known for.",
             "owner": "Boden Bradley"
+        }
+    },
+    {
+        "model": "inventory.wine",
+        "pk": 1,
+        "fields": {
+            "winery": 1,
+            "brand": "Reserve",
+            "year": 2017,
+            "varietal": "Merlot",
+            "description": "This wine offers bright red cherry and raspberry aromas, accompanied by dried floral tones intertwined with hints of mocha, vanilla, and cola. On the palate, this wine is supple and invigorating with a wonderful round mid-palate that is well-balanced on a beam of acidity. The framework of gentle tannins leads into a lingering finish that is both full and bright.","region": "Napa Valley","abv": 14.0,
+            "volume": 750,
+            "city_state": "Los Angeles, CA",
+            "price": 80,
+            "picture_url": "https://i.imgur.com/49oDOvV.png",
+            "quantity": 4000
         }
     },
     {
@@ -228,7 +255,7 @@
             "volume": 750,
             "city_state": "Los Angeles, CA",
             "price": 100,
-            "picture_url": "https: //i.imgur.com/KO1Bvs4.png",
+            "picture_url": "https://i.imgur.com/KO1Bvs4.png",
             "quantity": 5000
         }
     },
@@ -246,7 +273,7 @@
             "volume": 750,
             "city_state": "Los Angeles, CA",
             "price": 100,
-            "picture_url": "https: //i.imgur.com/E0Y87rU.png",
+            "picture_url": "https://i.imgur.com/E0Y87rU.png",
             "quantity": 5000
         }
     },
@@ -264,7 +291,7 @@
             "volume": 750,
             "city_state": "Pasadena, California",
             "price": 100,
-            "picture_url": "https: //i.imgur.com/Sxj4mAA.png",
+            "picture_url": "https://i.imgur.com/Sxj4mAA.png",
             "quantity": 2000
         }
     },
@@ -300,7 +327,7 @@
             "volume": 750,
             "city_state": "Pasadena, California",
             "price": 100,
-            "picture_url": "https: //i.imgur.com/Kv8psVx.png",
+            "picture_url": "https://i.imgur.com/Kv8psVx.png",
             "quantity": 1200
         }
     },
@@ -318,7 +345,7 @@
             "volume": 750,
             "city_state": "Pasadena, California",
             "price": 130,
-            "picture_url": "https: //i.imgur.com/mbf7czc.png",
+            "picture_url": "https://i.imgur.com/mbf7czc.png",
             "quantity": 300
         }
     },
@@ -336,7 +363,7 @@
             "volume": 750,
             "city_state": "Ridgefield, Washington",
             "price": 120,
-            "picture_url": "https: //i.imgur.com/6soZf9m.png",
+            "picture_url": "https://i.imgur.com/6soZf9m.png",
             "quantity": 1000
         }
     },
@@ -354,7 +381,7 @@
             "volume": 750,
             "city_state": "Bordeaux, France",
             "price": 130,
-            "picture_url": "https: //i.imgur.com/ahwPqgI.png",
+            "picture_url": "https://i.imgur.com/ahwPqgI.png",
             "quantity": 800
         }
     },
@@ -372,7 +399,7 @@
             "volume": 750,
             "city_state": "Milan, Italy",
             "price": 100,
-            "picture_url": "https: //i.imgur.com/OiaY6HE.png",
+            "picture_url": "https://i.imgur.com/OiaY6HE.png",
             "quantity": 2000
         }
     },
@@ -390,7 +417,7 @@
             "volume": 750,
             "city_state": "Sonoma County, California",
             "price": 115,
-            "picture_url": "https: //i.imgur.com/PtbSq2f.png",
+            "picture_url": "https://i.imgur.com/PtbSq2f.png",
             "quantity": 3000
         }
     },
@@ -408,7 +435,7 @@
             "volume": 750,
             "city_state": "Oregon, California",
             "price": 100,
-            "picture_url": "https: //i.imgur.com/3iCfbp9.png",
+            "picture_url": "https://i.imgur.com/3iCfbp9.png",
             "quantity": 1200
         }
     },
@@ -426,7 +453,7 @@
             "volume": 750,
             "city_state": "Los Angeles, California",
             "price": 130,
-            "picture_url": "https: //i.imgur.com/CwzI1Kp.png",
+            "picture_url": "https://i.imgur.com/CwzI1Kp.png",
             "quantity": 300
         }
     },
@@ -444,7 +471,7 @@
             "volume": 750,
             "city_state": "Ridgefield, Washington",
             "price": 120,
-            "picture_url": "https: //i.imgur.com/nlK60zc.png",
+            "picture_url": "https://i.imgur.com/nlK60zc.png",
             "quantity": 1000
         }
     },
@@ -462,7 +489,7 @@
             "volume": 750,
             "city_state": "Bordeaux, France",
             "price": 130,
-            "picture_url": "https: //i.imgur.com/76PKDP3.png",
+            "picture_url": "https://i.imgur.com/76PKDP3.png",
             "quantity": 800
         }
     },
@@ -480,7 +507,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 42,
-            "picture_url": "https: //i.imgur.com/JycxhOY.png",
+            "picture_url": "https://i.imgur.com/JycxhOY.png",
             "quantity": 1800
         }
     },
@@ -498,7 +525,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 60,
-            "picture_url": "https: //i.imgur.com/5HCTloC.png",
+            "picture_url": "https://i.imgur.com/5HCTloC.png",
             "quantity": 2000
         }
     },
@@ -516,7 +543,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 30,
-            "picture_url": "https: //i.imgur.com/4t6khAX.png",
+            "picture_url": "https://i.imgur.com/4t6khAX.png",
             "quantity": 1500
         }
     },
@@ -534,7 +561,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 36,
-            "picture_url": "https: //i.imgur.com/KdRB4l0.png",
+            "picture_url": "https://i.imgur.com/KdRB4l0.png",
             "quantity": 2000
         }
     },
@@ -552,7 +579,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 36,
-            "picture_url": "https: //i.imgur.com/nIPhSsv.png",
+            "picture_url": "https://i.imgur.com/nIPhSsv.png",
             "quantity": 2200
         }
     },
@@ -570,7 +597,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 30,
-            "picture_url": "https: //i.imgur.com/LKd5yIy.png",
+            "picture_url": "https://i.imgur.com/LKd5yIy.png",
             "quantity": 2200
         }
     },
@@ -588,7 +615,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 52,
-            "picture_url": "https: //i.imgur.com/9ouaqzO.png",
+            "picture_url": "https://i.imgur.com/9ouaqzO.png",
             "quantity": 2000
         }
     },
@@ -606,7 +633,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 58,
-            "picture_url": "https: //i.imgur.com/5K7NOtB.png",
+            "picture_url": "https://i.imgur.com/5K7NOtB.png",
             "quantity": 3000
         }
     },
@@ -624,7 +651,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 42,
-            "picture_url": "https: //i.imgur.com/0EWjR1f.png",
+            "picture_url": "https://i.imgur.com/0EWjR1f.png",
             "quantity": 2000
         }
     },
@@ -642,7 +669,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 26,
-            "picture_url": "https: //i.imgur.com/N3Vm0cx.png",
+            "picture_url": "https://i.imgur.com/N3Vm0cx.png",
             "quantity": 3000
         }
     },
@@ -660,7 +687,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 28,
-            "picture_url": "https: //i.imgur.com/vOJdPNd.png",
+            "picture_url": "https://i.imgur.com/vOJdPNd.png",
             "quantity": 3000
         }
     },
@@ -678,7 +705,7 @@
             "volume": 750,
             "city_state": "Napa, California",
             "price": 28,
-            "picture_url": "https: //i.imgur.com/p5oRNMz.png",
+            "picture_url": "https://i.imgur.com/p5oRNMz.png",
             "quantity": 3000
         }
     }
