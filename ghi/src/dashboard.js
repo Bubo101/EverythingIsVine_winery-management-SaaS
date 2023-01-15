@@ -97,7 +97,7 @@ class WineryList extends React.Component {
                 className="d-flex justify-content-center btn btn-lg px-4 bg-light gap-3"
                 style={{ color: 'mediumorchid' }}
               >
-                Try it out here! Create a winery!
+                Try it out here! Create a winery Now!
               </Link>
             </h5>
           </div>
