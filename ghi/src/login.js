@@ -52,7 +52,7 @@ function Login() {
         </form>
         <p className="forgot-password text-center">
           Need to create an account?{' '}
-          <a href={`/wineries/${id}/signup/`}>Sign Up Today</a>
+          <a href={`/wineries/${id}/signup/`}>Sign Up!</a>
         </p>
       </div>
     </div>
