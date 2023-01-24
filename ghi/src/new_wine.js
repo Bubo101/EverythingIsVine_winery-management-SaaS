@@ -84,7 +84,7 @@ function NewWine() {
   return (
     <>
       <div className={'wrapper fadeInDown' + (staff ? ' d-none' : '')}>
-        Sorry, you are not authorized to view this page
+        Sorry, you are not authorized to view this page!
       </div>
       <div className={'wrapper fadeInDown' + (staff ? '' : ' d-none')}>
         <div id="formContent" className="fadeIn first">
