@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuthContext } from './auth';
+import './loader.css'
 
 function Winery() {
   const [winery, setWinery] = useState({});
   const [staff, setStaff] = useState(false);
   const { id } = useParams();
   const { token } = useAuthContext();
+  const [loaded, setLoaded] = useState(false)
 
   async function fetchWinery() {
     // const host = `${process.env.REACT_APP_WINERY_API}`;
@@ -18,6 +20,7 @@ function Winery() {
       const data = await response.json();
       console.log(data);
       setWinery(data.winery);
+      setLoaded(true)
     }
   }
 
@@ -45,6 +48,14 @@ function Winery() {
     fetchWinery(token);
   }, []);
   /*eslint-enable */
+
+  if (!loaded){
+    return (
+      <div className='loading-pane'>
+        <h2 className='loader'>🍇</h2>
+      </div>
+    )
+  }
 
   return (
     <>
