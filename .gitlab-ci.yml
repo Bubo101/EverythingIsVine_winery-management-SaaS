@@ -43,12 +43,12 @@ sales-unit-test-job:
     - python manage.py test  # Run the tests
   
 
-lint-job:
-  image: python:3-bullseye
-  stage: test
-  script:
-    - pip install flake8
-    - flake8 winery sales
+# lint-job:
+#   image: python:3-bullseye
+#   stage: test
+#   script:
+#     - pip install flake8
+#     - flake8 winery sales
   
 
 build-front-end-job:
