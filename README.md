@@ -7,12 +7,8 @@
 * [GRAPHICAL HUMAN INTERFACE](docs/ghi.md)
 * [INTEGRATIONS](docs/integrations.md)
 
-## Developers
-* Jennifer W.
-* Kayli R.
-* Richard S.
+## Developer
 * Boden B.
-* Shadan A.
 
 ## Intended Market
 Our application is intended to be used by winery owners looking for a simple and tailored way to create a winery home page, add wines, update inventory and winery details, and generate revenue from sales.  It also doubles as user interface for the customer, allowing a customer to add inventory to a cart and make a purchase. 
