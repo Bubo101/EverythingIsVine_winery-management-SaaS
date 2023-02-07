@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './card.css'
 
 function WineColumn(props) {
   return (
@@ -7,7 +8,7 @@ function WineColumn(props) {
       {props.list.map((data) => {
         const winery = data;
         return (
-          <div key={winery.id} className="card h-300 mb-3 mt-5 shadow">
+          <div key={winery.id} className="cards mb-3 mt-5 shadow">
             <img src={winery.url} className="card-img-top" alt="" />
             <div className="card-body">
               <h5 className="card-title">

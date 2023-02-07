@@ -1,0 +1,12 @@
+Copy code
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.cards {
+  width: 300px;
+  height: 415px;
+  margin: 10px;
+}
+

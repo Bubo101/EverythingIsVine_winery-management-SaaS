@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuthContext } from './auth';
+import "./winecards.css"
 
 function WineColumn(props) {
   const { id } = useParams();
@@ -20,7 +21,7 @@ function WineColumn(props) {
     <div className="col">
       {props.list.map((wine) => {
         return (
-          <div key={wine.id} className="card col-lg-10 mb-3 shadow mt-4">
+          <div key={wine.id} className="cardss col-lg-10 mb-3 shadow mt-4">
             <img src={wine.picture_url} alt="" className="card-img-top mt-3" />
             <div className="card-body">
               <h5 className="d-flex justify-content-center card-title">
