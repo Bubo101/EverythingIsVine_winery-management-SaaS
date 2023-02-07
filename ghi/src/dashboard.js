@@ -125,7 +125,7 @@ class WineryList extends React.Component {
               className="d-flex justify-content-center btn btn-lg px-4 gap-3 text-light"
               style={{ backgroundColor: 'mediumorchid' }}
             >
-              Request More Info About Our Services
+              Request More Info About Our Service Offerings
             </Link>
           </h5>
         </div>
