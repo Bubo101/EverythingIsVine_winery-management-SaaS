@@ -182,123 +182,125 @@ build-sales-api-image-job:  # RENAME THIS
     - docker push ${CI_REGISTRY_IMAGE}/sales:latest
 
 
-deploy-sales-api-image-job:  # RENAME THIS
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  stage: deploy
-  image: docker:20.10.16
-  needs:
-    # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
-    - build-sales-api-image-job
-  services:
-    - docker:20.10.16-dind
-  script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker pull ${CI_REGISTRY_IMAGE}/sales:latest
-    - docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
-    - docker tag ${CI_REGISTRY_IMAGE}/sales:latest registry.heroku.com/$HEROKU_SALES/web:latest
-    - docker push registry.heroku.com/$HEROKU_SALES/web:latest
+# deploy-sales-api-image-job:  # RENAME THIS
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#   stage: deploy
+#   image: docker:20.10.16
+#   needs:
+#     # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
+#     - build-sales-api-image-job
+#   services:
+#     - docker:20.10.16-dind
+#   script:
+#     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+#     - docker pull ${CI_REGISTRY_IMAGE}/sales:latest
+#     - docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+#     - docker tag ${CI_REGISTRY_IMAGE}/sales:latest registry.heroku.com/$HEROKU_SALES/web:latest
+#     - docker push registry.heroku.com/$HEROKU_SALES/web:latest
 
-    # EVERYWHERE IT SHOWS fastapi_api BELOW, CHANGE THOSE
-    # TO THE NAME YOU CHOSE FOR THE BUILD STEP (2 PLACES)
+#     # EVERYWHERE IT SHOWS fastapi_api BELOW, CHANGE THOSE
+#     # TO THE NAME YOU CHOSE FOR THE BUILD STEP (2 PLACES)
 
-    # EVERYWHERE IT SHOWS HEROKU_SERVICE_APP BELOW, CHANGE
-    # THOSE TO THE VARIABLE NAME YOU CREATED FOR THE CI/CD
-    # SETTINGS (2 PLACES)
+#     # EVERYWHERE IT SHOWS HEROKU_SERVICE_APP BELOW, CHANGE
+#     # THOSE TO THE VARIABLE NAME YOU CREATED FOR THE CI/CD
+#     # SETTINGS (2 PLACES)
 
-    # IF THIS IS FOR A BACKGROUND SERVICE LIKE A POLLER,
-    # CHANGE /web TO /worker (2 PLACES)
+#     # IF THIS IS FOR A BACKGROUND SERVICE LIKE A POLLER,
+#     # CHANGE /web TO /worker (2 PLACES)
 
-release-sales-api-image-job:  # RENAME THIS
-  stage: deploy
-  image: node:10.17-alpine
-  needs:
-    # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
-    - deploy-sales-api-image-job
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  before_script:
-    - apk add curl bash
-    - curl https://cli-assets.heroku.com/install.sh | sh
-  script:
-    # EVERYWHERE IT SHOWS HEROKU_SERVICE_APP BELOW, CHANGE
-    # THOSE TO THE VARIABLE NAME YOU CREATED FOR THE CI/CD
-    # SETTINGS (1 PLACE)
+# release-sales-api-image-job:  # RENAME THIS
+#   stage: deploy
+#   image: node:10.17-alpine
+#   needs:
+#     # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
+#     - deploy-sales-api-image-job
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#   before_script:
+#     - apk add curl bash
+#     - curl https://cli-assets.heroku.com/install.sh | sh
+#   script:
+#     # EVERYWHERE IT SHOWS HEROKU_SERVICE_APP BELOW, CHANGE
+#     # THOSE TO THE VARIABLE NAME YOU CREATED FOR THE CI/CD
+#     # SETTINGS (1 PLACE)
 
-    # IF THIS IS FOR A BACKGROUND SERVICE LIKE A POLLER,
-    # CHANGE web TO worker (1 PLACE)
-    - heroku container:release web --app $HEROKU_SALES
-
-
-# Sales Poller
+#     # IF THIS IS FOR A BACKGROUND SERVICE LIKE A POLLER,
+#     # CHANGE web TO worker (1 PLACE)
+#     - heroku container:release web --app $HEROKU_SALES
 
 
-build-sales-poller-api-image-job:  # RENAME THIS
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  stage: build
-  image: docker:20.10.16
-  needs:
-    - build-front-end-job
-  services:
-    - docker:20.10.16-dind
-  script:
-    # CHANGE THIS TO THE DIRECTORY THAT HAS YOUR Dockerfile
-    - cd sales
-
-    # EVERYWHERE IT SHOWS fastapi_api BELOW, CHANGE THOSE
-    # TO A MORE MEANINGFUL SERVICE NAME (5 PLACES)
-    - docker build -t ${CI_REGISTRY_IMAGE}/sales_poller:latest .
-    - docker tag ${CI_REGISTRY_IMAGE}/sales_poller:latest ${CI_REGISTRY_IMAGE}/sales_poller:$CI_PIPELINE_ID
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker push ${CI_REGISTRY_IMAGE}/sales_poller:$CI_PIPELINE_ID
-    - docker push ${CI_REGISTRY_IMAGE}/sales_poller:latest
+# # Sales Poller
 
 
-deploy-sales-poller-api-image-job:  # RENAME THIS
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  stage: deploy
-  image: docker:20.10.16
-  needs:
-    # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
-    - build-sales-poller-api-image-job
-  services:
-    - docker:20.10.16-dind
-  script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker pull ${CI_REGISTRY_IMAGE}/sales_poller:latest
-    - docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
-    - docker tag ${CI_REGISTRY_IMAGE}/sales_poller:latest registry.heroku.com/$HEROKU_SALES_POLLER/worker:latest
-    - docker push registry.heroku.com/$HEROKU_SALES_POLLER/worker:latest
+# build-sales-poller-api-image-job:  # RENAME THIS
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#   stage: build
+#   image: docker:20.10.16
+#   needs:
+#     - build-front-end-job
+#   services:
+#     - docker:20.10.16-dind
+#   script:
+#     # CHANGE THIS TO THE DIRECTORY THAT HAS YOUR Dockerfile
+#     - cd sales
 
-    # EVERYWHERE IT SHOWS fastapi_api BELOW, CHANGE THOSE
-    # TO THE NAME YOU CHOSE FOR THE BUILD STEP (2 PLACES)
+#     # EVERYWHERE IT SHOWS fastapi_api BELOW, CHANGE THOSE
+#     # TO A MORE MEANINGFUL SERVICE NAME (5 PLACES)
+#     - docker build -t ${CI_REGISTRY_IMAGE}/sales_poller:latest .
+#     - docker tag ${CI_REGISTRY_IMAGE}/sales_poller:latest ${CI_REGISTRY_IMAGE}/sales_poller:$CI_PIPELINE_ID
+#     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+#     - docker push ${CI_REGISTRY_IMAGE}/sales_poller:$CI_PIPELINE_ID
+#     - docker push ${CI_REGISTRY_IMAGE}/sales_poller:latest
 
 
-    # EVERYWHERE IT SHOWS HEROKU_SERVICE_APP BELOW, CHANGE
-    # THOSE TO THE VARIABLE NAME YOU CREATED FOR THE CI/CD
-    # SETTINGS (2 PLACES)
+# deploy-sales-poller-api-image-job:  # RENAME THIS
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#   stage: deploy
+#   image: docker:20.10.16
+#   needs:
+#     # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
+#     - build-sales-poller-api-image-job
+#   services:
+#     - docker:20.10.16-dind
+#   script:
+#     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+#     - docker pull ${CI_REGISTRY_IMAGE}/sales_poller:latest
+#     - docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+#     - docker tag ${CI_REGISTRY_IMAGE}/sales_poller:latest registry.heroku.com/$HEROKU_SALES_POLLER/worker:latest
+#     - docker push registry.heroku.com/$HEROKU_SALES_POLLER/worker:latest
 
-    # IF THIS IS FOR A BACKGROUND SERVICE LIKE A POLLER,
-    # CHANGE /web TO /worker (2 PLACES)
+#     # EVERYWHERE IT SHOWS fastapi_api BELOW, CHANGE THOSE
+#     # TO THE NAME YOU CHOSE FOR THE BUILD STEP (2 PLACES)
 
-release-sales-poller-api-image-job:  # RENAME THIS
-  stage: deploy
-  image: node:10.17-alpine
-  needs:
-    # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
-    - deploy-sales-poller-api-image-job
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-  before_script:
-    - apk add curl bash
-    - curl https://cli-assets.heroku.com/install.sh | sh
-  script:
-    # EVERYWHERE IT SHOWS HEROKU_SERVICE_APP BELOW, CHANGE
-    # THOSE TO THE VARIABLE NAME YOU CREATED FOR THE CI/CD
-    # SETTINGS (1 PLACE)
 
-    # IF THIS IS FOR A BACKGROUND SERVICE LIKE A POLLER,
-    # CHANGE web TO worker (1 PLACE)
-    - heroku container:release worker --app $HEROKU_SALES_POLLER
+#     # EVERYWHERE IT SHOWS HEROKU_SERVICE_APP BELOW, CHANGE
+#     # THOSE TO THE VARIABLE NAME YOU CREATED FOR THE CI/CD
+#     # SETTINGS (2 PLACES)
+
+#     # IF THIS IS FOR A BACKGROUND SERVICE LIKE A POLLER,
+#     # CHANGE /web TO /worker (2 PLACES)
+
+# release-sales-poller-api-image-job:  # RENAME THIS
+#   stage: deploy
+#   image: node:10.17-alpine
+#   needs:
+#     # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
+#     - deploy-sales-poller-api-image-job
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#   before_script:
+#     - apk add curl bash
+#     - curl https://cli-assets.heroku.com/install.sh | sh
+#   script:
+#     # EVERYWHERE IT SHOWS HEROKU_SERVICE_APP BELOW, CHANGE
+#     # THOSE TO THE VARIABLE NAME YOU CREATED FOR THE CI/CD
+#     # SETTINGS (1 PLACE)
+
+#     # IF THIS IS FOR A BACKGROUND SERVICE LIKE A POLLER,
+#     # CHANGE web TO worker (1 PLACE)
+#     - heroku container:release worker --app $HEROKU_SALES_POLLER
+
+    
