@@ -106,23 +106,23 @@ build-winery-api-image-job:  # RENAME THIS
     - docker push ${CI_REGISTRY_IMAGE}/winery:latest
 
 
-deploy-winery-api-image-job:  # RENAME THIS
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - if: $CI_COMMIT_BRANCH == "end-cd"
-  stage: deploy
-  image: docker:20.10.16
-  needs:
-    # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
-    - build-winery-api-image-job
-  services:
-    - docker:20.10.16-dind
-  script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker pull ${CI_REGISTRY_IMAGE}/winery:latest
-    - docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
-    - docker tag ${CI_REGISTRY_IMAGE}/winery:latest registry.heroku.com/$HEROKU_INVENTORY_API_APP/web:latest
-    - docker push registry.heroku.com/$HEROKU_INVENTORY_API_APP/web:latest
+# deploy-winery-api-image-job:  # RENAME THIS
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#     - if: $CI_COMMIT_BRANCH == "end-cd"
+#   stage: deploy
+#   image: docker:20.10.16
+#   needs:
+#     # CHANGE THIS TO THE JOB NAME FROM THE LAST STEP
+#     - build-winery-api-image-job
+#   services:
+#     - docker:20.10.16-dind
+#   script:
+#     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+#     - docker pull ${CI_REGISTRY_IMAGE}/winery:latest
+#     - docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+#     - docker tag ${CI_REGISTRY_IMAGE}/winery:latest registry.heroku.com/$HEROKU_INVENTORY_API_APP/web:latest
+#     - docker push registry.heroku.com/$HEROKU_INVENTORY_API_APP/web:latest
 
     # EVERYWHERE IT SHOWS fastapi_api BELOW, CHANGE THOSE
     # TO THE NAME YOU CHOSE FOR THE BUILD STEP (2 PLACES)
