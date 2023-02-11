@@ -47,8 +47,8 @@ This data is then passed into the internal API response to the front end React c
 automatically centering and placing a pin on the map of each corresponding winery contact page.
 
 I am proud of writing this function because it shows expertise with:
-- Using 3rd party APIs and API Key environment variables
-- Making JSON requests and subsequently decoding it to an object for parsing
+- Using 3rd party APIs and API Key environment variables in the Django back end framework.
+- Making JSON requests and subsequently decoding it to an object for parsing.
 - Utilizing memoization to improve load times and speed of the internal API using the variable "localCache"
     by storing coordinates for addresses searched before.  If it has been searched before it is stored and 
     retrieved immediately for the internal API response and a call to the 3rd party API is not needed.

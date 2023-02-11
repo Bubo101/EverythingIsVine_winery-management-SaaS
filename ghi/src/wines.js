@@ -152,7 +152,7 @@ function WineList() {
         <h1 className="display-5 fw-bold">Our Wines</h1>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
-            Please enjoy a selection of our finest wines from {wineryName}.
+            Please enjoy a selection of our finest inventory from {wineryName}.
           </p>
           <p className="display-9" style={{ color: 'orchid' }}>
             Login or Sign Up above to get a discount at checkout!
