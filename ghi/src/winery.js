@@ -70,7 +70,7 @@ function Winery() {
             Edit Winery Details
           </Link>
         </div>
-        <h2 className="display-4">Welcome to {winery.name}</h2>
+        <h2 className="display-4">Welcome To {winery.name}</h2>
         <div
           className="rounded mt-4"
           style={{
@@ -83,7 +83,7 @@ function Winery() {
             boxShadow: '5px 5px 10px lightgrey',
           }}
         ></div>
-        <h1 className="display-5 mt-4">About us</h1>
+        <h1 className="display-5 mt-4">About Us</h1>
         <p className="px-4 py-5 bg-light mt-4 rounded">{winery.description}</p>
       </div>
     </>
