@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './auth.css';
 import { useAuthContext } from './auth';
@@ -18,6 +18,7 @@ function EditWine() {
     picture_url: '',
     quantity: '',
   });
+
   const [winery, setWinery] = useState(null);
   const [staff, setStaff] = useState(false);
   const { id } = useParams();
@@ -35,6 +36,7 @@ function EditWine() {
     picture_url,
     quantity,
   } = data;
+
   const navigate = useNavigate();
 
   async function fetchWine() {
@@ -72,6 +74,7 @@ function EditWine() {
     const response = await fetch(url, {
       credentials: 'include',
     });
+
     if (response.ok) {
       const user = await response.json();
 
@@ -80,9 +83,11 @@ function EditWine() {
       }
     }
   }
+
   if (token) {
     getCurrentUser();
   }
+  
   const changeHandler = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };

@@ -139,8 +139,8 @@ function WineList() {
   if (token) {
     getCurrentUser();
   }
+  
   /*eslint-disable */
-
   useEffect(() => {
     fetchWines(token);
   }, []);

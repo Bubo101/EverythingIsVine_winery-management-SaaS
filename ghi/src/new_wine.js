@@ -212,7 +212,6 @@ function NewWine() {
                 required
               />
             </div>
-
             <input type="submit" className="fadeIn fourth" value="Submit" />
           </form>
         </div>
