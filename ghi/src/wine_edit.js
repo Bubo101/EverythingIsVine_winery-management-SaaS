@@ -1,7 +1,7 @@
 import './App.css';
+import './auth.css';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './auth.css';
 import { useAuthContext } from './auth';
 
 function EditWine() {
@@ -87,7 +87,7 @@ function EditWine() {
   if (token) {
     getCurrentUser();
   }
-  
+
   const changeHandler = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
