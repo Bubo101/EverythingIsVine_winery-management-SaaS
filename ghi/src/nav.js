@@ -102,7 +102,7 @@ function Navigation() {
                   'btn btn-light p-2 mb-1 mt-1' + (logged ? ' d-none' : '')
                 }
               >
-                Sign Up
+                Register
               </Link>
             </div>
             <div className="px-3">
