@@ -51,7 +51,7 @@ function Login() {
           <input type="submit" className="fadeIn fourth" value="Sign In" />
         </form>
         <p className="forgot-password text-center">
-          Need to create an account?{' '}
+          Need to register?{' '}
           <a href={`/wineries/${id}/signup/`}>Sign Up Here!</a>
         </p>
       </div>
