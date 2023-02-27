@@ -18,6 +18,7 @@ import NewWine from './new_wine';
 import Request from './request';
 import GetWine from './WineDetails';
 import NewWinery from './newWinery';
+import Chat from './chat';
 
 function App(props) {
   const domain = /https:\/\/[^/]+/;
@@ -71,6 +72,7 @@ function App(props) {
       <AuthProvider>
         <BrowserRouter basename={basename}>
           <div className="container">
+          <Chat />
             <Routes>
               <Route path="/" element={<WineryList />} />
               <Route path="/request/" element={<Request />} />
