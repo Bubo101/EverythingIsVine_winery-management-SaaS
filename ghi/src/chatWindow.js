@@ -2,15 +2,15 @@ import React from "react";
 import './chat-window.css'
 
 const questions = [
-    'What are your hours of operation?',
-    'What services do you offer?',
-    'How much does your service cost?',
+    'What time is it?',
+    'If I see an entry level Software Dev job, what should I do?',
+    'This chat thing is awesome, but what does it mean on a deeper level?',
 ];
 
 const answers = {
-    'What are your hours of operation?': 'We are open Monday to Friday, 9am to 5pm.',
-    'What services do you offer?': 'We offer a variety of services including web design, SEO, and social media marketing.',
-    'How much does your service cost?': 'Our prices vary depending on the service. Please contact us for more information.',
+    'What time is it?': 'It is wine-O-clock, always!',
+    'If I see an entry level Software Dev job, what should I do?': 'Let Boden know to apply and refer him!  Duh',
+    'This chat thing is awesome, but what does it mean on a deeper level?': 'It means Boden would make a great team member and contributor to your company!',
 };
 
 class ChatWindow extends React.Component {
@@ -30,7 +30,7 @@ class ChatWindow extends React.Component {
     render() {
     return (
         <div className="chat-window">
-            <h1>Chat with us!</h1>
+            <h1>Common Questions</h1>
             <div>
                 {questions.map((question) => (
                 <button key={question} onClick={() => this.handleQuestionClick(question)}>

@@ -2,9 +2,39 @@
     position: fixed;
     bottom: 80px;
     right: 30px;
-    width: 300px;
-    height: 400px;
-    border: 1px solid black;
+    width: 380px;
+    height: 540px;
+    border: 3px solid black;
+    border-radius: 15px;
     background-color: white;
     z-index: 999;
 }
+
+.chat-window h1 {
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    
+}
+
+.chat-window button {
+    display: block;
+    margin: 10px auto;
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.chat-window p {
+    font-size: 1.2em;
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: lightcoral;
+    border-radius: 10px;
+}
+
