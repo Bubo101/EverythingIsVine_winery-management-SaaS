@@ -90,7 +90,7 @@ class WineryList extends React.Component {
           </h1>
           <div className="col-lg-6 mx-auto">
             <p className="lead mb-5 text-light font-italic">
-              The Premiere Winery Management Application.
+              The Premiere Winery Management Application
             </p>
             <h5 className="card-title">
               <Link
