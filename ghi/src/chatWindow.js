@@ -30,7 +30,7 @@ class ChatWindow extends React.Component {
     render() {
     return (
         <div className="chat-window">
-            <h1>Common Questions</h1>
+            <h1>FAQ</h1>
             <div>
                 {questions.map((question) => (
                 <button key={question} onClick={() => this.handleQuestionClick(question)}>
