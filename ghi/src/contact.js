@@ -96,7 +96,7 @@ const Contact = () => {
             style={{ backgroundColor: 'orchid' }}
           >
             <form ref={refForm} onSubmit={sendEmail}>
-              <h3 className="mt-4 display-5 text-light">Contact Us</h3>
+              <h3 className="mt-4 display-5 text-light">Contact Us!</h3>
               <div className="fadeIn form-input-row second">
                 <input
                   className="form-control"
