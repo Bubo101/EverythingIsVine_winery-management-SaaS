@@ -112,7 +112,7 @@ function NewWinery() {
             </div>
             <input type="submit" className="fadeIn fourth" value="Submit" />
             <p className="forgot-password text-center">
-              Change your mind? <a href={`/`}>Go Home</a>
+              Change your mind? <a href={`/`}>Go Back Home</a>
             </p>
           </form>
         </div>
