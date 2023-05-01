@@ -70,7 +70,7 @@ function Winery() {
             Edit Winery Details
           </Link>
         </div>
-        <h2 className="display-4">Welcome To: {winery.name}</h2>
+        <h2 className="display-4">Welcome To {winery.name}</h2>
         <div
           className="rounded mt-4"
           style={{
