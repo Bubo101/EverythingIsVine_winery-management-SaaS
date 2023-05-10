@@ -112,7 +112,7 @@ setData({...data,[e.target.name]:[e.target.value]});
                             placeholder="Enter Email"
                             required />
                     </div>
-                    <div className='fadeIn fourth text-secondary mt-2'>Check box to test employee functionality</div>
+                    <div className='fadeIn fourth text-secondary mt-2'>Check box to test employee functionality now!</div>
                     <span><input type="checkbox" className='fadeIn fourth' value={employee} onClick={() => {setData({...data, employee:!data.employee})}} name="employee"/></span>
                     <div>
                     <input type="submit" className="fadeIn fourth" value="Sign Up" />
