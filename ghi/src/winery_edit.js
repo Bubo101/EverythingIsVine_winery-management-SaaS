@@ -87,7 +87,7 @@ function EditWinery() {
   return (
     <>
       <div className={'wrapper fadeInDown' + (staff ? ' d-none' : '')}>
-        Sorry, you are not authorized to view this page right now
+        Sorry, you are not authorized to view this page at the moment
       </div>
       <div className={'wrapper fadeInDown' + (staff ? '' : ' d-none')}>
         <div id="formContent" className="fadeIn first">
