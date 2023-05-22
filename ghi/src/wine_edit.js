@@ -126,7 +126,7 @@ function EditWine() {
           <form onSubmit={updateWine}>
             <div className="fadeIn second">
               <div className="display-6 text-secondary mt-3">
-                Brand or Wine Name
+                Brand or Wine Name Here
               </div>
               <input
                 className="form-control"
