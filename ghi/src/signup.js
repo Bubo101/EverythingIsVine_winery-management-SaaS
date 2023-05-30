@@ -118,7 +118,7 @@ setData({...data,[e.target.name]:[e.target.value]});
                     <input type="submit" className="fadeIn fourth" value="Sign Up" />
                     </div>
                     <p className="forgot-password text-center">
-                        Already Registered? <a href={`/wineries/${id}/login/`}>Login Here Please!</a>
+                        Already Registered? <a href={`/wineries/${id}/login/`}>Login Here!</a>
                     </p>
                 </form>
             </div>
