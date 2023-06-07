@@ -155,7 +155,7 @@ function WineList() {
             Please enjoy a selection of our finest inventory from {wineryName}.
           </p>
           <p className="display-9" style={{ color: 'orchid' }}>
-            Login or Register above to get a discount at checkout.
+            Login or Register above to get a discount @ checkout.
           </p>
           <p>
             <Link
