@@ -112,7 +112,7 @@ class WineryList extends React.Component {
         </div>
         <div className="px-2 py-2 bg-light mt-4 mb-2 rounded text-center">
           <p className="lead mb-3" style={{ color: 'black' }}>
-            Please enjoy a selection of sample winery pages below.
+            Please enjoy a selection of sample winery pages below!
           </p>
           <p className="lead mb-3" style={{ color: 'black' }}>
             Winery pages can be hosted as a collective or by individual winery &
