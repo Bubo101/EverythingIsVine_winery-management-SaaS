@@ -116,7 +116,7 @@ class WineryList extends React.Component {
           </p>
           <p className="lead mb-3" style={{ color: 'black' }}>
             Winery pages can be hosted as a collective or by individual winery &
-            customized to your needs! Click the link below and one of our
+            customized to your needs. Click the link below and one of our
             representatives will reach out to you.{' '}
           </p>
           <h5 className="card-title">
