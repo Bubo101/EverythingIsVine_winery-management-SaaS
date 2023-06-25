@@ -82,7 +82,7 @@ const Contact = () => {
         />
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-2">
-            We thank you for your patronage and hope to see you soon at:
+            We thank you for your patronage and hope to see you soon @:
           </p>
           <h1 className="display-5">{winery.name}</h1>
           <p className="mt-2">Owner: {winery.owner}</p>
