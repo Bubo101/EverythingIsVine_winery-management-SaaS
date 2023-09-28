@@ -1,6 +1,14 @@
 Copy code
-.container {
+
+/* .container {
   display: flex;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -8,5 +16,34 @@ Copy code
   width: 300px;
   height: 415px;
   margin: 10px;
+} */
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px; /* Adjust this value as needed */
+}
+
+.cards {
+  width: 100%;
+  height: 415px;
+  margin: 10px 0;
+}
+
+/* Apply flex-wrap to create multiple rows of cards */
+.col .row {
+  flex-wrap: wrap;
 }
 
