@@ -2,13 +2,13 @@ import React from "react";
 import './chat-window.css'
 
 const questions = [
-    'What time is it now?',
+    'What time is it?',
     'If I see an entry level Software Dev job, what should I do?',
     'This chat thing is awesome, but what does it mean on a deeper level?',
 ];
 
 const answers = {
-    'What time is it now?': 'It is wine-O-clock, always!',
+    'What time is it?': 'It is wine-O-clock, always!',
     'If I see an entry level Software Dev job, what should I do?': 'Let Boden know to apply and refer him!  Duh',
     'This chat thing is awesome, but what does it mean on a deeper level?': 'It means Boden would make a great team member and contributor to your company!',
 };
