@@ -12,7 +12,7 @@ const answers = {
     'What time is it?': 'It is wine-O-clock, always!',
     'If I see an entry level Software Dev job, what should I do?': 'Let Boden know to apply and refer him!  Duh',
     'This chat thing is awesome, but what does it mean on a deeper level?': 'It means Boden would make a great team member and contributor to your company!',
-    'Is Boden a good candidate for business school?' : 'Absolutely',
+    'Is Boden a good candidate for business school?' : 'Absolutely, he is the best!',
 };
 
 class ChatWindow extends React.Component {
